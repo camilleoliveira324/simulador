@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Banco PROA</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <header>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://www.proa.org.br/static/proa.svg" alt="" width="80" height="" class="d-inline-block align-text-top">  
+            Banco
+            </a>
+        </div>
+      </nav>
+  </header>
+
+  <!--Primeira tela-->
+  <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-5 m-3">
+                <h1 class="text-center">Simulador</h1>
+                <form class="form-dados" method="post">
+                    <div class="mb-3">
+                      <label for="nomedapessoa" class="form-label">Nome</label>
+                      <input type="text" class="form-control" id="nomedapessoa" name="nomedapessoa" aria-describedby="Digite seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="valordoinvestimento" class="form-label">Valor mensal</label>
+                        <input type="number" class="form-control" id="valordoinvestimento" name="valordoinvestimento" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Digite apenas números inteiros, sem vírgula ou ponto.</div>
+                      </div>
+                    <div>
+                        <select class="form-select" aria-label="Default select example" id="meses">
+                            <option selected>Tempo</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="text-center"> 
+                      <button type="submit" class="btn btn-primary m-3" onclick="simulação(); return false";>Simular</button>
+                    </div>
+                  </form>
+            </div>
+
+
+
+
+            <!--Segunda tela-->
+            <div class="text-center d-none show-result segunda">
+                <div class="pessoa"><h1>Olá,</h1></div>
+                <div class="display-1 text-info result-value">...</div>
+                <div class="small textinho textão textoo">juntando R$ <span class="result-value"></span></div>
+                <button type="submit" class="btn btn-primary my-3" onclick="simular_novamente(); return false;">Simular novamente</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="_js/simulação.js"></script>
+  </body>
+</html>
